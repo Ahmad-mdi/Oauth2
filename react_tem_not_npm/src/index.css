@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.w-calc {
+    width: calc(100% - 250px);
+}
+.w-calc-layout {
+    @media (max-width: 1024px) {
+        width: calc(100% - 265px);
+    }
+    width: calc(100% - 320px);
+}
