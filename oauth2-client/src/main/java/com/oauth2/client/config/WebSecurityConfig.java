@@ -15,13 +15,14 @@ public class WebSecurityConfig {
             "/hello",
             "/register",
             "/verifyRegistration*",
-            "/resendVerifyToken*"
+            "/resendVerifyToken*",
     };
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(11);
     }
+
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

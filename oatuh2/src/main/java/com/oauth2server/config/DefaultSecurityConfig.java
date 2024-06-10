@@ -1,7 +1,6 @@
 package com.oauth2server.config;
 
 import com.oauth2server.service.CustomAuthenticationProvider;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.Customizer;
@@ -20,7 +19,7 @@ public class DefaultSecurityConfig {
         http.authorizeRequests(authorizeRequests ->
                         authorizeRequests.anyRequest().authenticated()
                 )
-                .formLogin(Customizer.withDefaults());
+                .formLogin(formLogin -> formLogin.defaultSuccessUrl("http://localhosts:8080/api/hello"));
         return http.build();
     }
 

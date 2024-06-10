@@ -3,6 +3,7 @@ package com.oauth2.client.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -19,6 +20,8 @@ public class HelloController {
     public String hello(Principal principal) {
         return "Hello " +principal.getName()+", Welcome to Panel Dashboard";
     }
+
+
 
     @GetMapping("/api/users")
     public String[] users(

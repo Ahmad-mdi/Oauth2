@@ -35,8 +35,6 @@ public class RegistrationController {
         return "Bad User";
     }
 
-
-
     @PostMapping("/changePassword")
     public String changePassword(@RequestBody PasswordModel passwordModel){
         User user = userService.findUserByUsername(passwordModel.getUsername());
